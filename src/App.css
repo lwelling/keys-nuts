@@ -1,38 +1,46 @@
 .App {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home-page-1 {
+  background: linear-gradient(0deg, rgba(221, 220, 222, 1) 37%, rgba(216, 177, 224, 1) 100%);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+  padding: 45vh 55vh;
 }
 
-.App-link {
-  color: #61dafb;
+.home-page-2 {
+  background: rgb(221, 220, 222);
+  background: linear-gradient(180deg, rgba(221, 220, 222, 1) 37%, rgba(235, 220, 157, 1) 100%);
+  height: 100vh;
+  margin: auto;
+  padding: 45vh 55vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-page-3 {
+  background: rgb(235, 220, 157);
+  background: linear-gradient(180deg, rgba(235, 220, 157, 1) 69%, rgba(119, 150, 145, 1) 100%);
+  min-height: 100vh;
+  margin: auto;
+  padding: 45vh 55vh;
+}
+
+.browse-page-1 {
+  min-height: 100vh;
+  background: rgb(221, 220, 222);
+}
+
+.addKey-page-1 {
+  min-height: 100vh;
+  margin: auto;
+  padding: 20vh 20vh;
+}
+
+.black-text {
+  color: #0A0F0D;
+}
+
+.footer-link {
+  padding-right: 2rem;
 }
