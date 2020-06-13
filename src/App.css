@@ -7,7 +7,7 @@
   background: linear-gradient(0deg, rgba(221, 220, 222, 1) 37%, rgba(216, 177, 224, 1) 100%);
   min-height: 100vh;
   margin: auto;
-  padding: 45vh 55vh;
+  padding-top: 50vh;
 }
 
 .home-page-2 {
@@ -15,7 +15,7 @@
   background: linear-gradient(180deg, rgba(221, 220, 222, 1) 37%, rgba(235, 220, 157, 1) 100%);
   height: 100vh;
   margin: auto;
-  padding: 45vh 55vh;
+  padding-top: 50vh;
 }
 
 .home-page-3 {
@@ -23,7 +23,7 @@
   background: linear-gradient(180deg, rgba(235, 220, 157, 1) 69%, rgba(119, 150, 145, 1) 100%);
   min-height: 100vh;
   margin: auto;
-  padding: 45vh 55vh;
+  padding-top: 50vh;
 }
 
 .browse-page-1 {

@@ -16,7 +16,7 @@ const Home = () => {
         <div className="home-page-2">
             <div className="black-text">
                 <h3>
-                    View Inventory
+                    <a href="/browse">Browse keys</a>
                 </h3>
             </div>
         </div>
