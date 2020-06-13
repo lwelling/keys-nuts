@@ -23,25 +23,30 @@ const AddKey = () => {
 
   const addKeyToFirestore = (e) => {
     e.preventDefault();
-    
-    // write the Object to the firestore db
+    if (newKey.stockNumber && newKey.make && newKey.modelNumber && newKey.fccId && newKey.ic) {
+            // write the Object to the firestore db
     firestore.collection("keys").doc(newKey.stockNumber).set(newKey)
-      .then(function() {
-          console.log("Document successfully written!");
-          
-        // reset the state
-        setNewKey({
-          stockNumber: null,
-          make: null,
-          modelNumber: null,
-          fccId: null,
-          ic: null,
-        })
+    .then(function() {
+        console.log("Document successfully written!");
+        
+      // reset the state
+      setNewKey({
+        stockNumber: null,
+        make: null,
+        modelNumber: null,
+        fccId: null,
+        ic: null,
       })
-      .catch(function(error) {
-          console.error("Error writing document: ", error);
-      });
-      handleClose();
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+    handleClose();
+      } else {
+        alert("Please fill out entire form...")
+      }
+    
+
     }
 
   const handleChange = (e) => {
@@ -54,7 +59,7 @@ const AddKey = () => {
     return (
         <div>
 
-          <Button variant="primary" onClick={handleShow}>
+          <Button className="full-width" variant="primary" onClick={handleShow}>
             Add Key
           </Button>
 
@@ -83,7 +88,7 @@ const AddKey = () => {
                   <Form.Control type="text" placeholder="IC" onChange={(e) => handleChange(e)}/>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button className="full-width" variant="primary" type="submit">
                   Submit
                 </Button>
               </Form>

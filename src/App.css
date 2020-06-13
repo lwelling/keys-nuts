@@ -44,3 +44,7 @@
 .footer-link {
   padding-right: 2rem;
 }
+
+.full-width {
+  min-width: 100%;
+}

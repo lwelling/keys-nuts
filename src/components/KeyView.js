@@ -9,7 +9,7 @@ const KeyView = ({ keyData }) => {
 
   return (
     <>
-      <Button variant="secondary" onClick={handleShow}>
+      <Button variant="outline-secondary" onClick={handleShow}>
         view
       </Button>
 
@@ -38,7 +38,7 @@ const KeyView = ({ keyData }) => {
           </Table>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="outline-primary" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>
