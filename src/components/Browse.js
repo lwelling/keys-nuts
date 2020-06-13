@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Table, Spinner } from "react-bootstrap";
+import { Container, Spinner, Image, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import AddKey from "./AddKey";
 import { firestore } from "../firebase";
 import { collectIdsAndDocs } from "../utilities";
-import KeyView from "./KeyView";
 
 const Browse = () => {
   const [keysList, setKeys] = useState([]);
 
-  const keysSortedByStock = keysList.sort((a, b) =>
-    parseInt(a.stockNumber) > parseInt(b.stockNumber) ? 1 : -1
-  );
+  const keysSortedByMake = keysList.sort((a, b) => (a.make > b.make ? 1 : -1));
 
   useEffect(() => {
     async function onSnapShotListener() {
@@ -31,35 +29,38 @@ const Browse = () => {
   return (
     <div className="browse-page-1">
       <AddKey />
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>Make</th>
-            <th>FCC ID</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {keysSortedByStock ? (
-            keysSortedByStock.map((data, i) => (
-              <tr key={i}>
-                {console.log(keysList)}
-                <td>{data.make}</td>                
-                <td>{data.ic}</td>
-                <td>
-                  <KeyView keyData={data} />
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="5">
-                <Spinner animation="border" role="status" />
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </Table>
+      <Container>
+        {keysSortedByMake ? (
+          keysSortedByMake.map((data, i) => (
+            <Row className="key-listing" sm={true} key={i}>
+              <Col sm={true}>
+                <Image src={data.photoURL} className="key-photo" thumbnail />
+              </Col>
+              <Col sm={true}>
+                <h2>{data.make}</h2> <br />
+                IC <strong>{data.ic}</strong> <br />
+                FCC ID <strong>{data.fccId}</strong>
+              </Col>
+              <Col sm={true}>
+                <Link
+                  to={{
+                    pathname: `/browse/${data.stockNumber}`,
+                    state: data,
+                  }}
+                >
+                  view
+                </Link>
+              </Col>
+            </Row>
+          ))
+        ) : (
+          <Row>
+            <Col sm={true}>
+              <Spinner animation="border" role="status" />
+            </Col>
+          </Row>
+        )}
+      </Container>
     </div>
   );
 };

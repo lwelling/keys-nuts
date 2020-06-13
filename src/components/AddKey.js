@@ -13,6 +13,7 @@ const AddKey = () => {
     modelNumber: null,
     fccId: null,
     ic: null,
+    photoURL: null,
   })
 
   const make = ["Chevrolet", "Chrysler", "Nissan", "Lexus", "Jeep", "Ram", "Toyota", "Mazda", "Maserati", "Ford", "Honda", "Genesis", "Hyundai"]
@@ -23,7 +24,7 @@ const AddKey = () => {
 
   const addKeyToFirestore = (e) => {
     e.preventDefault();
-    if (newKey.stockNumber && newKey.make && newKey.modelNumber && newKey.fccId && newKey.ic) {
+    if (newKey.stockNumber && newKey.make && newKey.modelNumber && newKey.fccId && newKey.ic && newKey.photoURL) {
             // write the Object to the firestore db
     firestore.collection("keys").doc(newKey.stockNumber).set(newKey)
     .then(function() {
@@ -36,6 +37,7 @@ const AddKey = () => {
         modelNumber: null,
         fccId: null,
         ic: null,
+        photoURL: null,
       })
     })
     .catch(function(error) {
@@ -86,6 +88,10 @@ const AddKey = () => {
 
                 <Form.Group controlId="ic">
                   <Form.Control type="text" placeholder="IC" onChange={(e) => handleChange(e)}/>
+                </Form.Group>
+
+                <Form.Group controlId="photoURL">
+                  <Form.Control type="text" placeholder="Photo URL" onChange={(e) => handleChange(e)}/>
                 </Form.Group>
 
                 <Button className="full-width" variant="primary" type="submit">

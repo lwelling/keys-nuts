@@ -1,49 +1,26 @@
-import React, { useState } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import React from "react";
+import { Container, Image, Row, Col } from "react-bootstrap";
 
-const KeyView = ({ keyData }) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+const KeyView = ({ location }) => {
+  const keyData = location.state;
+  console.log(keyData);
   return (
-    <>
-      <Button variant="outline-secondary" onClick={handleShow}>
-        view
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>FCC ID: {keyData.fccId}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Stock #</th>
-                <th>Make</th>
-                <th>Model #</th>
-                <th>IC</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{keyData.stockNumber}</td>
-                <td>{keyData.make}</td>
-                <td>{keyData.modelNumber}</td>
-                <td>{keyData.ic}</td>
-              </tr>
-            </tbody>
-          </Table>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="outline-primary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+    <Container>
+      <Row>
+        <Col sm={true}>
+          <Image src={keyData.photoURL} className="key-photo" thumbnail />
+        </Col>
+        <Col sm={true}>
+          <h1>{keyData.make}</h1>
+          Stock #{keyData.stockNumber} <br />
+        </Col>
+        <Col sm={true}>
+          Model #<strong>{keyData.modelNumber}</strong> <br />
+          IC <strong>{keyData.ic}</strong> <br />
+          FCC ID <strong>{keyData.fccId}</strong>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 export default KeyView;
