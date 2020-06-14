@@ -7,6 +7,7 @@ import NavigationBar from "./components/NavigationBar.js";
 import Browse from "./components/Browse.js";
 import "./App.css";
 import KeyView from "./components/KeyView.js";
+import Contact from "./components/Contact.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <NavigationBar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/contact" component={Contact} />
           <Route exact path="/browse" component={Browse} />
           <Route exact path="/browse/:stockNumber" component={KeyView} />
         </Switch>

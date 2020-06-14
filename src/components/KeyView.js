@@ -6,21 +6,21 @@ const KeyView = ({ location }) => {
   return (
     <Container>
       <Row>
-        <Col sm={true}>
+        <Col gutter="false" sm={true}>
           <Image src={keyData.photoURL} thumbnail />
         </Col>
-        <Col sm={true}>
+        <Col gutter="false" sm={true}>
           <h1>{keyData.make}</h1>
           Stock #{keyData.stockNumber} <br />
         </Col>
-        <Col sm={true}>
+        <Col gutter="false" sm={true}>
           Model #<strong>{keyData.modelNumber}</strong> <br />
           IC <strong>{keyData.ic}</strong> <br />
           FCC ID <strong>{keyData.fccId}</strong>
         </Col>
       </Row>
       <Row>
-        <Col sm={true}>
+        <Col gutter="false" sm={true}>
           <p>
             For professional locksmiths only. Buyer agrees to reprogram key fob
             and replace key. Keys Nuts accepts no responsibility for actions
