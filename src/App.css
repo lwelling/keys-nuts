@@ -1,10 +1,14 @@
 .App {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .home-page-1 {
-  background: linear-gradient(0deg, rgba(221, 220, 222, 1) 37%, rgba(216, 177, 224, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(221, 220, 222, 1) 37%,
+    rgba(216, 177, 224, 1) 100%
+  );
   min-height: 90vh;
   margin: auto;
   padding-top: 50vh;
@@ -12,7 +16,11 @@
 
 .home-page-2 {
   background: rgb(221, 220, 222);
-  background: linear-gradient(180deg, rgba(221, 220, 222, 1) 37%, rgba(235, 220, 157, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(221, 220, 222, 1) 37%,
+    rgba(235, 220, 157, 1) 100%
+  );
   height: 100vh;
   margin: auto;
   padding-top: 50vh;
@@ -20,18 +28,18 @@
 
 .home-page-3 {
   background: rgb(235, 220, 157);
-  background: linear-gradient(180deg, rgba(235, 220, 157, 1) 69%, rgba(119, 150, 145, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(235, 220, 157, 1) 69%,
+    rgba(119, 150, 145, 1) 100%
+  );
   min-height: 90vh;
   margin: auto;
   padding-top: 50vh;
 }
 
 .black-text {
-  color: #0A0F0D;
-}
-
-.footer-link {
-  padding-right: 2rem;
+  color: #0a0f0d;
 }
 
 .full-width {
@@ -42,4 +50,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+}
+
+.container {
+  margin: 5rem;
 }

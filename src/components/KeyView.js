@@ -7,7 +7,7 @@ const KeyView = ({ location }) => {
     <Container>
       <Row>
         <Col sm={true}>
-          <Image src={keyData.photoURL} className="key-photo" thumbnail />
+          <Image src={keyData.photoURL} thumbnail />
         </Col>
         <Col sm={true}>
           <h1>{keyData.make}</h1>
@@ -22,7 +22,9 @@ const KeyView = ({ location }) => {
       <Row>
         <Col sm={true}>
           <p>
-          For professional locksmiths only. Buyer agrees to reprogram key fob and replace key. Keys Nuts accepts no responsibility for actions taken with inventory after transaction.
+            For professional locksmiths only. Buyer agrees to reprogram key fob
+            and replace key. Keys Nuts accepts no responsibility for actions
+            taken with inventory after transaction.
           </p>
         </Col>
       </Row>
