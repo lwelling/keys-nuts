@@ -45,7 +45,8 @@ const Browse = () => {
                       to={{
                         pathname: `/browse/${data.stockNumber}`,
                         state: data,
-                      }}>
+                      }}
+                      className="stretched-link">
                         view
                     </Link>   
                 </Card.Body>
