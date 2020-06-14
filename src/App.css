@@ -26,10 +26,6 @@
   padding-top: 50vh;
 }
 
-.browse-page-1 {
-  min-height: 90vh;
-}
-
 .black-text {
   color: #0A0F0D;
 }
@@ -42,7 +38,8 @@
   min-width: 100%;
 }
 
-.key-listing {
-  padding: 1rem;
-  background: linear-gradient(45deg, rgba(221, 220, 222, 1) 17%, rgba(216, 177, 224, 0.041) 100%);
+.browse-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
